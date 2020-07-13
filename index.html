@@ -1,72 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <link href="style.css">
 </head>
 <body>
-
-<div id="myDiv" class="inputDiv">
-  <h1>My <span class="title">book-list</span></h1>
-  <br>
-  <br>
-  <input type="text" id="book" placeholder="Add New...">
-  <span onclick="addNewItem()" class="addBtn">Add</span>
-</div>
-
-<ul id="bookList">
-  <li>Harry Potter</li>
-</ul>
-
-<script>
-var myList = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myList.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("x");
-  span.className = "close";
-  span.appendChild(txt);
-  myList[i].appendChild(span);
-}
-
-
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-
-function addNewItem(){
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("book").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("Please add new book");
-  } else {
-    document.getElementById("bookList").appendChild(li);
-  }
-  document.getElementById("book").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("x");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
-</script>
-
+  <div id="myDiv" class="inputDiv">
+    <h1>My <span class="title">book-list</span></h1>
+    <br>
+    <br>
+    <input type="text" id="book" placeholder="Add New...">
+    <span onclick="addNewItem()" class="addBtn">Add</span>
+  </div>
+  <ul id="bookList">
+    <li>Harry Potter</li>
+  </ul>
+  <script src="main.js"></script>
 </body>
 </html>
